@@ -293,7 +293,7 @@ Reports can be shared directly to institutional portals, spreadsheets, or messag
 
 ## 👥 Authors & Acknowledgments
 
-- **Lead Developer**: Joydip Majumdar Borno ([@borno18](https://github.com/borno18))
+- **Developers**: Mst. Myful (2023831010), Samia Rahman(2023831046), Joydip Majumdar Borno(2023831004)
 - **Organization**: Academic Project / Android Development
 
 ---
