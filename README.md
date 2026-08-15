@@ -1,4 +1,4 @@
-# 📡 Smart Proximity Attendance System
+#  Smart Proximity Attendance System
 
 [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev/)
 [![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
@@ -10,7 +10,7 @@ An offline, peer-to-peer (P2P) proximity-based automated attendance management a
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -28,7 +28,7 @@ An offline, peer-to-peer (P2P) proximity-based automated attendance management a
 
 ---
 
-## 🌟 Overview
+##  Overview
 
 Traditional attendance systems suffer from proxy marking (students signing in for absent peers), slow manual paper roll-calls, or high infrastructure costs for biometric hardware.
 
@@ -39,9 +39,9 @@ Traditional attendance systems suffer from proxy marking (students signing in fo
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-### 👨‍🏫 Instructor / Teacher Module
+###  Instructor / Teacher Module
 - **Course & Roster Management**:
   - Create and manage academic courses.
   - Bulk import student rosters via CSV (`Registration Number`, `Student Name`).
@@ -68,7 +68,7 @@ Traditional attendance systems suffer from proxy marking (students signing in fo
 
 ---
 
-## 🔒 Anti-Proxy & Fraud Prevention
+##  Anti-Proxy & Fraud Prevention
 
 The system implements a three-tier fraud prevention model:
 
@@ -92,7 +92,7 @@ graph TD
 
 ---
 
-## 🏗 System Architecture
+##  System Architecture
 
 ```mermaid
 flowchart LR
@@ -115,7 +115,7 @@ flowchart LR
 
 ---
 
-## 🗄 Database Schema
+##  Database Schema
 
 The app uses an embedded relational SQLite database (`attendance_system_v2.db`) structured as follows:
 
@@ -172,7 +172,7 @@ erDiagram
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 | Category | Technology | Purpose |
 | :--- | :--- | :--- |
@@ -188,7 +188,7 @@ erDiagram
 
 ---
 
-## 📂 Project Directory Structure
+##  Project Directory Structure
 
 ```text
 Project_250/
@@ -217,7 +217,7 @@ Project_250/
 
 ---
 
-## ⚙️ Prerequisites & Permissions
+##  Prerequisites & Permissions
 
 ### Android Requirements
 - **Minimum SDK**: API Level 21 (Android 5.0 Lollipop)
@@ -233,7 +233,7 @@ The app dynamically requests:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 ```bash
@@ -277,7 +277,7 @@ flutter run
 
 ---
 
-## 📊 Export & Reporting
+##  Export & Reporting
 
 Attendance reports can be exported in standardized `.csv` format:
 
@@ -291,7 +291,7 @@ Reports can be shared directly to institutional portals, spreadsheets, or messag
 
 ---
 
-## 👥 Authors & Acknowledgments
+##  Authors & Acknowledgments
 
 - **Developers**: Mst. Myful (2023831010), Samia Rahman(2023831046), Joydip Majumdar Borno(2023831004)
 - **Organization**: Academic Project / Android Development
