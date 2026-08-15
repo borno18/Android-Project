@@ -117,16 +117,16 @@ The system enforces a multi-tier defense architecture preventing proxy attendanc
 
 ```mermaid
 graph TD
-    A[Student Submits Attendance] --> B{1. Physical Proximity Check}
-    B -- Out of RF Range --> X[❌ Rejected: No Direct Connection]
-    B -- In Range --> C{2. Rolling PIN Validation}
-    C -- Incorrect / Expired --> Y[❌ Rejected: Invalid PIN]
-    C -- Valid --> D{3. Course Roster Check}
-    D -- Not Enrolled --> Z[⚠️ Flagged / Enrolled via Teacher Policy]
-    D -- Enrolled --> E{4. Device Fraud Engine}
-    E -- Device used by another Student --> F[🚨 Blocked: Multi-Account Proxy Attempt]
-    E -- Reg No bound to different Device --> G[🚨 Blocked: Unregistered Device Spoof]
-    E -- Verified / First-Time Bound --> H[✅ Attendance Recorded & Device Bound]
+    A["Student Submits Attendance"] --> B{"1. Physical Proximity Check"}
+    B -- Out of RF Range --> X["❌ Rejected: No Direct Connection"]
+    B -- In Range --> C{"2. Rolling PIN Validation"}
+    C -- Incorrect / Expired --> Y["❌ Rejected: Invalid PIN"]
+    C -- Valid --> D{"3. Course Roster Check"}
+    D -- Not Enrolled --> Z["⚠️ Flagged / Enrolled via Policy"]
+    D -- Enrolled --> E{"4. Device Fraud Engine"}
+    E -- Device used by another Student --> F["🚨 Blocked: Multi-Account Proxy"]
+    E -- Reg No bound to different Device --> G["🚨 Blocked: Unregistered Device Spoof"]
+    E -- Verified / First-Time Bound --> H["✅ Attendance Recorded & Device Bound"]
 ```
 
 1. **Physical Layer Boundary**: Enforced via Bluetooth LE & Wi-Fi Direct radio ranges. Signals cannot be routed over the internet or spoofed from dorms/remote locations.
@@ -136,17 +136,17 @@ graph TD
 
 ---
 
-##  System Architecture
+## 🏗 System Architecture
 
 ```mermaid
 flowchart TB
-    subgraph Teacher Device
-        TD[Teacher Dashboard]
-        OCR[ML Kit OCR Engine]
-        EXCEL[Excel / CSV Importer]
-        LS[Live Session Screen]
-        PS_T[Proximity Service - Advertiser]
-        DB_T[(Local SQLite DB)]
+    subgraph Teacher["Teacher Device"]
+        TD["Teacher Dashboard"]
+        OCR["ML Kit OCR Engine"]
+        EXCEL["Excel / CSV Importer"]
+        LS["Live Session Screen"]
+        PS_T["Proximity Service - Advertiser"]
+        DB_T[("Local SQLite DB")]
 
         OCR --> DB_T
         EXCEL --> DB_T
@@ -155,16 +155,16 @@ flowchart TB
         LS <--> DB_T
     end
 
-    subgraph Offline RF Wireless Layer
-        PS_T <=== Bluetooth LE & Wi-Fi Direct (P2P_STAR) ===> PS_S
+    subgraph RF["Offline RF Wireless Layer"]
+        PS_T <--> |"Bluetooth LE / Wi-Fi Direct (P2P_STAR)"| PS_S
     end
 
-    subgraph Student Device
-        SD[Student Dashboard]
-        RADAR[Radar Scanning Screen]
-        PIN_ENTRY[PIN Challenge Entry]
-        PS_S[Proximity Service - Discoverer]
-        DB_S[(Student Config DB)]
+    subgraph Student["Student Device"]
+        SD["Student Dashboard"]
+        RADAR["Radar Scanning Screen"]
+        PIN_ENTRY["PIN Challenge Entry"]
+        PS_S["Proximity Service - Discoverer"]
+        DB_S[("Student Config DB")]
 
         SD --> RADAR
         RADAR --> PIN_ENTRY
