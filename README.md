@@ -49,6 +49,8 @@ Traditional attendance systems suffer from proxy marking (students signing in fo
 - **Live Attendance Broadcast**:
   - Start an active session advertising the course ID using `P2P_STAR` topology.
   - **Dynamic Rolling PIN**: 6-digit rolling PIN refreshed every 30 seconds with visual countdown timer.
+  - If a student tries to give attendance using a different device, the attendance will fail. The system will display:
+“This registration is bound to a different device. Please contact your teacher.”
   - **Real-Time Live Counter**: Instant UI updates showing enrolled vs. present students with animated progress indicators.
   - Automatic connection handshake, payload evaluation, and confirmation dispatch.
 - **Session History & Reports**:
